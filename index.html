@@ -73,7 +73,8 @@
 <style>
 #us-map{
   display: block;
-  width: 66.666%;
+  width: 64.5%;
+  border-right: 1px solid #ececec;
 }
 path:hover, circle:hover {
   stroke-linejoin: round;
@@ -86,16 +87,38 @@ path:hover, circle:hover {
   cursor: default;
 }
 #info-box {
+  width:33.333%;
   display: block;
-width:200px;
   z-index: 1;
   background-color: #ffffff;
-  border: 1px solid #5faee1;
   border-radius: 5px;
   padding: 5px;
   height:100%;
-  font-family: arial;
+  font-family: Source Sans Pro;
   float:right;
+  font-size:14px;
+  color:#717177;
+}
+
+#info-box h3{
+	font-weight:bold;
+	margin-bottom:0px;
+	margin-top:0px;
+	font-size:16px;
+	color:#333;
+}
+
+#info-box h4{
+	font-weight: normal;
+	font-style:italic;
+	font-size:14px;
+	margin-top: 0px;
+}
+
+#info-box h4 span{
+	font-weight: bold;
+	color:#5faee1;
+	font-style:normal;
 }
 </style>
 
