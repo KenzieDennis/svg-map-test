@@ -1,4 +1,5 @@
-<div id="info-box"></div>
+<div class = "info" id="info-box"></div>
+<div class = "info" id = "empty-state"><h3>Hover to view opportunities</h3><p>We have over 0000 campuses available to book with across the US. Hover over each state to view a selection of campuses available in that state.</p></div>
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="us-map" preserveAspectRatio="xMinYMin meet" sodipodi:docname="Republican_Party_presidential_primaries_results,_2016.svg" inkscape:version="0.91 r13725" x="0px" y="0px" width="959px" height="593px" viewBox="174 100 959 593" enable-background="new 174 100 959 593" xml:space="preserve">
 <sodipodi:namedview bordercolor="#666666" objecttolerance="10" pagecolor="#ffffff" borderopacity="1" gridtolerance="10" guidetolerance="10" inkscape:cx="509.19152" inkscape:cy="282.2353" inkscape:zoom="1.2137643" showgrid="false" id="namedview71" inkscape:current-layer="g5" inkscape:window-maximized="1" inkscape:window-y="-8" inkscape:window-x="-8" inkscape:pageopacity="0" inkscape:window-height="1017" inkscape:window-width="1920" inkscape:pageshadow="2">
@@ -86,7 +87,7 @@ path:hover, circle:hover {
   stroke: #A9A9A9 !important;
   cursor: default;
 }
-#info-box {
+.info {
   width:33.333%;
   display: block;
   z-index: 1;
@@ -100,7 +101,7 @@ path:hover, circle:hover {
   color:#717177;
 }
 
-#info-box h3{
+.info h3{
 	font-weight:bold;
 	margin-bottom:0px;
 	margin-top:0px;
@@ -108,29 +109,50 @@ path:hover, circle:hover {
 	color:#333;
 }
 
-#info-box h4{
+.info h4{
 	font-weight: normal;
 	font-style:italic;
 	font-size:14px;
 	margin-top: 0px;
-	color: #333;
 }
 
-#info-box h4 span{
+.info h4 span{
 	font-weight: bold;
 	color:#5faee1;
 	font-style:normal;
 }
+
+#empty-state{
+	text-align: center;
+	padding-top:200px;
+}
+
+#info-box {
+	display:none;
+}
+
+#empty-state h3{
+	color:#717177;
+}
+
+#empty-state p{
+	margin-top: 0px;
+}
+
 </style>
 
 <script type = "text/javascript">
+
+
 $("path, circle").hover(function(e) {
 	console.log('everyday im hoverin');
   $('#info-box').css('display','block');
+  $('#empty-state').css('display','none');
   $('#info-box').html($(this).data('info'));
 });
 $("path, circle").mouseleave(function(e) {
   $('#info-box').css('display','none');
+  $('#empty-state').css('display','block');
 });
 $(document).mousemove(function(e) {
 	console.log('working');
